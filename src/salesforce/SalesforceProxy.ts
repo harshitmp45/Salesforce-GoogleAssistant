@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Report } from './../models/Report.interface';
 
-let proxyURL = 'https://sfbottest-developer-edition.na78.force.com/services/apexrest';
+let proxyURL = 'https://harshitmp45-dev-ed.my.salesforce.com/services/apexrest';
 
 export class SalesforceProxy {
 
