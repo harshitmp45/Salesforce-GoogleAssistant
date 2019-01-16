@@ -11,11 +11,16 @@ dialogflowRouter.post('/', (request: Request, response: Response) => {
   const actions: DialogFlowAction[] = [
     ShowReportAction
   ];
-
+	var actionName = req.body.result.action; 
   // Register the Actions in the DiaglogFlow App.
-  const actionMap = new Map();
-  actions.forEach(action => actionMap.set(action.name, action.handler,action.createrecordintent));
-
+  if(actionName == 'show.report'){
+	const actionMap = new Map();
+	actions.forEach(action => actionMap.set(action.name, action.handler));
+  }
+  if(actionName == 'createupdaterecord'){
+	  const actionMap = new Map();
+	actions.forEach(action => actionMap.set(action.createrecordintent, action.handler));
+  }
   const dialogflowApp = new DialogflowApp({request, response});
   dialogflowApp.handleRequest(actionMap);
 });
