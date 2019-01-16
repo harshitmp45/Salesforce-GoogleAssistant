@@ -17,7 +17,7 @@ dialogflowRouter.post('/', (request: Request, response: Response) => {
   if(actionName == 'show.report'){
 	actions.forEach(action => actionMap.set(action.name, action.handler));
   }
-  if(actionName == 'createupdaterecord'){
+  if(actionName == 'createupdate.record'){
 	actions.forEach(action => actionMap.set(action.createrecordintent, action.handlerRecord));
   }
   const dialogflowApp = new DialogflowApp({request, response});
