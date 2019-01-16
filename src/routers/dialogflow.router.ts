@@ -14,7 +14,7 @@ dialogflowRouter.post('/', (request: Request, response: Response) => {
 
   // Register the Actions in the DiaglogFlow App.
   const actionMap = new Map();
-  actions.forEach(action => actionMap.set(action.name, action.handler));
+  actions.forEach(action => actionMap.set(action.name, action.handler,action.createrecordintent));
 
   const dialogflowApp = new DialogflowApp({request, response});
   dialogflowApp.handleRequest(actionMap);
