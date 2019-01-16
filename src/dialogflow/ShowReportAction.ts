@@ -20,7 +20,7 @@ export async function handler(dialogflowApp: DialogflowApp) {
 	  // Call Salesforce.
 	let response = await salesforceProxy.showReport(report);
     dialogflowApp.ask(response.data as string);
-}
+};
 export async function handlerRecord(dialogflowApp: DialogflowApp) {
   let salesforceProxy = new SalesforceProxy();
 
@@ -33,4 +33,4 @@ export async function handlerRecord(dialogflowApp: DialogflowApp) {
 	  // Call Salesforce.
 	let response = await salesforceProxy.createupdateRercord(record);
     dialogflowApp.ask(response.data as string);
-}
+};
