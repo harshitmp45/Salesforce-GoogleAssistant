@@ -28,7 +28,7 @@ export async function handlerRecord(dialogflowApp: DialogflowApp) {
   let SObjectName = dialogflowApp.getArgument('SObjectName') + '';
   let RecordName = dialogflowApp.getArgument('RecordName') + '';
   let RecordField = dialogflowApp.getArgument('RecordField') + '';
-  let RecordValue = dialogflowApp.getArgument('RecordValue') + '';
+  let RecordValue = dialogflowApp.getArgument('FieldValue') + '';
 	let record :Record  = <Record> {sObjectNameinterface: SObjectName, recordNameinterface: RecordName, recordFieldinterface: RecordField, recordValueinterface: RecordValue};
 	  // Call Salesforce.
 	let response = await salesforceProxy.createupdateRercord(record);
