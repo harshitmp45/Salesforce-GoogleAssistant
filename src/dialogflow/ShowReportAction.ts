@@ -33,3 +33,16 @@ export async function handler(dialogflowApp: DialogflowApp) {
     dialogflowApp.ask(response.data as string);  
   }
 }
+export async function handlerRecord(dialogflowApp: DialogflowApp) {
+  let salesforceProxy = new SalesforceProxy();
+
+  // Get the Report name and the Filter.
+  let SObjectName = dialogflowApp.getArgument('SObjectName') + '';
+  let RecordName = dialogflowApp.getArgument('RecordName') + '';
+  let RecordField = dialogflowApp.getArgument('RecordField') + '';
+  let RecordValue = dialogflowApp.getArgument('RecordValue') + '';
+	let record :Record  = <Record> {sObjectName: SObjectName, recordName: RecordName,recordField: RecordField,recordValue: RecordValue};
+	  // Call Salesforce.
+	let response = await salesforceProxy.createupdateRercord(record);
+    dialogflowApp.ask(response.data as string);
+}
