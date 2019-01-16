@@ -26,7 +26,7 @@ export async function handler(dialogflowApp: DialogflowApp) {
     dialogflowApp.ask(response.data as string);
   }
   if(SObjectName){
-	let record :Record  = <Record> {sObjectName: SObjectName, recordName: RecordName,recordField: RecordField,RecordValue: RecordValue};
+	let record :Record  = <Record> {sObjectName: SObjectName, recordName: RecordName,recordField: RecordField,recordValue: RecordValue};
 	  // Call Salesforce.
 	let response = await salesforceProxy.createupdateRercord(record);
     dialogflowApp.ask(response.data as string);  
