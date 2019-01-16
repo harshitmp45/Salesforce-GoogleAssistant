@@ -4,7 +4,7 @@ import { Record } from './../models/Record.interface';
 import { SalesforceProxy } from './../salesforce/SalesforceProxy';
 
 export const name = 'show.report';
-export const name = 'createupdaterecord';
+export const createrecordintent = 'createupdaterecord';
 
 export async function handler(dialogflowApp: DialogflowApp) {
   let salesforceProxy = new SalesforceProxy();
