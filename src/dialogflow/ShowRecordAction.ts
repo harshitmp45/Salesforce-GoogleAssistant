@@ -12,7 +12,7 @@ export async function handler(dialogflowApp: DialogflowApp) {
   let RecordName = dialogflowApp.getArgument('RecordName') + '';
   let RecordField = dialogflowApp.getArgument('RecordField') + '';
   let RecordValue = dialogflowApp.getArgument('FieldValue') + '';
-	let record :Record  = <Record> {sObjectNameinterface: SObjectName, recordNameinterface: RecordName, recordFieldinterface: RecordField, recordValueinterface: RecordValue};
+	let record :Record  = <Record> {sObjectName: SObjectName, recordName: RecordName, recordField: RecordField, recordValue: RecordValue};
 	  // Call Salesforce.
 	let response = await salesforceProxy.createupdateRercord(record);
     dialogflowApp.ask(response.data as string);

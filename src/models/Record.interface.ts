@@ -1,6 +1,6 @@
 export interface Record {
-  sObjectNameinterface: string
-  recordNameinterface: string
-  recordFieldinterface: string
-  recordValueinterface: string
+  sObjectName: string
+  recordName: string
+  recordField: string
+  recordValue: string
 };
