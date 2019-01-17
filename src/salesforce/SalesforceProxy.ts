@@ -10,6 +10,6 @@ export class SalesforceProxy {
     return axios.post(proxyURL + '/showreport', report, {headers: {'Content-Type': 'application/json'}});
   }
   createupdateRercord(record: Record) {
-   return axios.post(proxyURL + '/createupdaterecord', record, {headers: {'application/json'}});
+   return axios.post(proxyURL + '/createupdaterecord', record, {headers: {'Content-Type': 'application/json'}});
   }
 };
